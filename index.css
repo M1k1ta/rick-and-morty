@@ -1,3 +1,17 @@
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+}
 
+ul {
+  padding: o;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Segoe UI", "Roboto", sans-serif;
+}
 
 /*# sourceMappingURL=index.css.map */
