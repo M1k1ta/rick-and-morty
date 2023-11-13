@@ -1,0 +1,19 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+
+  &__title {
+    font-size: 26px;
+    font-weight: 400;
+    color: $error-color;
+    margin-bottom: 20px;
+  }
+
+  &__message {
+    color: $error-color;
+    font-size: 24px;
+  }
+}

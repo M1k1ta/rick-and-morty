@@ -1,4 +1,23 @@
+@import './styles/vars';
 @import './styles/reset';
 @import './styles/normalize';
 
 @import './App.scss';
+
+// pages
+@import './pages/HomePage/HomePage.scss';
+@import './pages/DetailPage/DetailPage.scss';
+
+// components
+@import './components/Header/Header.scss';
+@import './components/Footer/Footer.scss';
+@import './components/CharacterItem/CharacterItem.scss';
+@import './components/CharacterList/CharacterList.scss';
+@import './components/Character/Character.scss';
+@import './components/Pagination/Pagination.scss';
+@import './components/Filter/Filter.scss';
+@import './components/Menu/Menu.scss';
+@import './components/HistoryModal/HistoryModal.scss';
+@import './components/FieldList/FieldList.scss';
+@import './components/Loader/Loader.scss';
+@import './components/ErrorMessage/ErrorMessage.scss';

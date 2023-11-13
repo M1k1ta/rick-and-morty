@@ -1,0 +1,23 @@
+.header {
+  &__section-1 {
+    padding: 12px 27px;
+  }
+
+  &__section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: url('../../img/rick&morty.svg');
+    background-size: contain center;
+    background-repeat: no-repeat;
+    height: 345px;
+  }
+
+  &__title {
+    color: $footer-color;
+    font-size: 100px;
+    font-weight: 900;
+    line-height: 110%
+  }
+}
