@@ -25,6 +25,11 @@ export const FieldList: React.FC<Props> = (
         onClick={() => setIsVisibleList((currentValue) => !currentValue)}
       >
         <h2 className='field-list__title'>{title}</h2>
+        <i className={classNames('material-icons field-list__arrow', {
+          'field-list__arrow--active': isVisibleList,
+        })}>
+          chevron_left
+        </i>
       </div>
 
       <div className={classNames('field-list__box', {

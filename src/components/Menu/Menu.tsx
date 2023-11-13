@@ -2,12 +2,15 @@ import classNames from 'classnames';
 import menu from '../../img/menu.svg';
 import alert from '../../img/alert.svg';
 import save from '../../img/save.svg';
+import { CSVLink } from 'react-csv';
 import { useState } from 'react';
 import { HistoryModal } from '../HistoryModal';
+import { useAppSelector } from '../../app/hooks';
 
 export const Menu = () => {
   const [isMenu, setIsMenu] = useState(false);
   const [isModal, setIsModal] = useState(false);
+  const { characterList } = useAppSelector(state => state.characterList);
 
   return (
     <article className='menu'>
@@ -28,7 +31,7 @@ export const Menu = () => {
         <img src={alert} alt='character alert' />
       </button>
 
-      <button
+      <CSVLink
         className={classNames(
           'menu__button',
           'menu__button--small',
@@ -36,11 +39,10 @@ export const Menu = () => {
             'menu__button-2--active': isMenu,
           }
         )}
-        type='button'
-        disabled
+        data={characterList}
       >
         <img src={save} alt='character save' />
-      </button>
+      </CSVLink>
 
       <button
         className='menu__button menu__button-3'

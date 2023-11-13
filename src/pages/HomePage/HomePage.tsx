@@ -22,8 +22,6 @@ export const HomePage = () => {
     if (data) {
       dispatch(actions.set({
         characterList: data.characters.results,
-        loading,
-        error: error?.message || '',
         ...data.characters.info,
       }));
     }

@@ -6,6 +6,7 @@ import { ListKey } from '../../types/ListKey';
 import { useSearchParams } from 'react-router-dom';
 import { filterNameList } from '../../utils/filterNameList';
 import { useGrouprSearchParams } from '../../hooks/useGroupSearchParams';
+import classNames from 'classnames';
 
 export const Filter = () => {
   const [_, setSearchParams] = useSearchParams();
@@ -16,16 +17,30 @@ export const Filter = () => {
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
     const filter: FieldListType = {};
+    let counter = 0;
 
     for (const key in filters) {
       const currentValue = filters[key as ListKey];
 
       if (currentValue) {
         filter[key as ListKey] = currentValue;
+        counter++;
       }
     }
 
     setSearchParams({...filter});
+
+    if (counter > 0) {
+      const history: FieldListType[] = JSON.parse(
+        localStorage.getItem('history') || '[]'
+      );
+  
+      localStorage.setItem(
+        'history',
+        JSON.stringify([...history, filter])
+      );
+    }
+
     setFilters({});
     setIsFilter(false);
   };
@@ -43,7 +58,9 @@ export const Filter = () => {
         >
         </div>
       )}
-      <div className='filter__box'>
+      <div className={classNames('filter__box', {
+        'filter__box--active': isFilter,
+      })}>
         <Button
           sx={{
             paddingTop: '11px',

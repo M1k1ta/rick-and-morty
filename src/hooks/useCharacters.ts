@@ -20,8 +20,6 @@ const GET_CHARACTERS = gql`
     ) {
       info {
         pages
-        next
-        prev
       }
       results {
         id
