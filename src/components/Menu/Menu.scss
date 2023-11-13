@@ -53,10 +53,5 @@
     &:hover {
       background-color: $hover-color;
     }
-
-    &:disabled {
-      background-color: $uknown-color;
-      cursor: default;
-    }
   }
 }
