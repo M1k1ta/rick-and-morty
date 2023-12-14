@@ -15,6 +15,7 @@ export const CharacterList: React.FC = () => {
             to={`/${id}`}
             key={id}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className='character-link'
           >
             <CharacterItem
               character={character}
